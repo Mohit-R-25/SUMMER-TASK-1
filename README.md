@@ -30,3 +30,20 @@ Usage of pub(publishing) command:
 
 
 
+### What are services?
+
+Services are another form of communication in ros2. They are based on call and response model.
+
+For the service type: turtlesim/srv/Spawn: everything above the --- is request and below it is response.
+
+Request
+
+---
+
+Response
+
+<img width="841" height="187" alt="image" src="https://github.com/user-attachments/assets/d02356f4-01dd-4183-ad41-6ffc86f1fd61" />
+
+
+
+
