@@ -23,3 +23,10 @@ Topics are vital elements of ros graph and act as a bus for nodes to exchange me
 <img width="1303" height="843" alt="image" src="https://github.com/user-attachments/assets/04807370-989d-4a05-bb7f-d56c3b9c8e9c" />
 
 
+
+Usage of pub(publishing) command:
+
+<img width="1315" height="608" alt="image" src="https://github.com/user-attachments/assets/90256e62-2cdd-4041-834e-1be864287b91" />
+
+
+
