@@ -16,5 +16,3 @@ and here a ros 2 graph for visualising turtlesim:
 
 <img width="1328" height="814" alt="image" src="https://github.com/user-attachments/assets/03cba0e8-064c-4096-a53d-38a344138d45" />
 
-
-
