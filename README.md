@@ -49,10 +49,18 @@ example service call:
 <img width="1033" height="692" alt="image" src="https://github.com/user-attachments/assets/53142be4-1621-44d7-a24e-3b101a44977d" />
 
 
-### MAKING OF WORKSPACE
+### MAKING OF WORKSPACE:
 -First we make directory called ros2_ws.
 
 -Then we make subdirectory called src inside ros_ws. This is where we'll build the packages.
+
+<img width="410" height="163" alt="image" src="https://github.com/user-attachments/assets/b0f318cd-8f84-4b8e-bc96-8cb2ba9a4ac7" />
+
+
+## MAKING OF PACKAGES:
+### Python Package:-
+
+
 
 
 
