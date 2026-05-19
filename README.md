@@ -58,7 +58,20 @@ example service call:
 
 
 ## MAKING OF PACKAGES:
-### Python Package:-
+### 1)Python Package:-
+
+-Inside src we run this command to build python package
+
+<img width="808" height="54" alt="image" src="https://github.com/user-attachments/assets/a6f6b677-5bd0-40cf-8985-05beae90184a" />
+
+-Download example talker node from github
+
+<img width="808" height="73" alt="image" src="https://github.com/user-attachments/assets/34fda167-12e8-4b45-a6bc-866892907c44" />
+
+Now [Code for publisher node:](.ros2_ws/src/py_pubsub/py_pubsub/publisher_member_function)
+
+
+
 
 
 
