@@ -59,6 +59,8 @@ example service call:
 
 ## MAKING OF PACKAGES:
 ### 1)Python Package:-
+i)
+
 
 -Inside src we run this command to build python package
 
@@ -68,7 +70,9 @@ example service call:
 
 <img width="808" height="73" alt="image" src="https://github.com/user-attachments/assets/34fda167-12e8-4b45-a6bc-866892907c44" />
 
-Now [Code for publisher node:](ros2_ws/src/py_pubsub/py_pubsub/publisher_member_function.py)
+Now [Code for publisher node](ros2_ws/src/py_pubsub/py_pubsub/publisher_member_function.py)
+
+-Then update description, maintainer and license in package.xml and setup.py files, and add dependencies into package.xml. Depenedencies are the required modules which were used in the publisher code
 
 
 
