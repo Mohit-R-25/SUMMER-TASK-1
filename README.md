@@ -100,7 +100,11 @@ ii)Subscriber
 
 Similar to publisher, download example listener node.
 
-[Code for subscriber node]()
+[Code for subscriber node](ros2_ws/src/cpp_pubsub/src/subscriber_member_function.cpp)
+
+-Update [package.xml](ros2_ws/src/cpp_pubsub/package.xml) and [Cmakelists.txt](ros2_ws/src/cpp_pubsub/CMakeLists.txt)
+
+## SOME CLI COMMANDS ON PACKAGES
 
 
 
