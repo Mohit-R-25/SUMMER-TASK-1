@@ -92,7 +92,7 @@ ii)Subscriber
 
 [Code for publisher node](ros2_ws/src/cpp_pubsub/src/publisher_member_function.cpp)
 
--Similar to the python packages, update [package.xml]() and Cmakelists.txt
+-Similar to the python packages, update [package.xml](ros2_ws/src/cpp_pubsub/package.xml) and [Cmakelists.txt]()
 
 
 
