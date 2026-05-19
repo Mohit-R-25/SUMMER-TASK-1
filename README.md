@@ -68,7 +68,7 @@ example service call:
 
 <img width="808" height="73" alt="image" src="https://github.com/user-attachments/assets/34fda167-12e8-4b45-a6bc-866892907c44" />
 
-Now [Code for publisher node:](.ros2_ws/src/py_pubsub/py_pubsub/publisher_member_function)
+Now [Code for publisher node:](ros2_ws/src/py_pubsub/py_pubsub/publisher_member_function.py)
 
 
 
