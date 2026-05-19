@@ -106,6 +106,9 @@ Similar to publisher, download example listener node.
 
 ## SOME CLI COMMANDS ON PACKAGES
 
+<img width="798" height="211" alt="image" src="https://github.com/user-attachments/assets/e6c279ea-dfc0-4542-a3e2-7c30482a3182" />
+
+
 
 
 
