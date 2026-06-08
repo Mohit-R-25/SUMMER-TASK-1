@@ -183,6 +183,8 @@ touch circle_patrol_server.py
 
 **CMakeLists.txt is used in the turtle_patrol package to tell ROS 2 how to install and build the package. Even though circle_patrol_server.py and circle_patrol_client.py are Python scripts, ROS 2 needs them to be installed into the workspace during colcon build so that commands like ros2 run turtle_patrol circle_patrol_server.py can find and execute them. In an ament_cmake package, CMakeLists.txt handles this installation process and registers the scripts as executable ROS 2 nodes.**
 
+##
+
 
 
 
