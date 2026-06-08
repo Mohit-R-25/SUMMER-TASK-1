@@ -136,9 +136,26 @@ touch collision_avoidance_node.py
 
 --Logic: 
 
-->move forward with some linear velocity and zero angular velocity.
+-> move forward with some linear velocity and zero angular velocity.
 
-->If x<safety_threshold or x>safety_threshold or y<safety_threshold or y>safety_threshold 
+-> If x<safety_threshold or x>safety_threshold or y<safety_threshold or y>safety_threshold (where x and y are coordinates):
+->-> give turtle some non-zero linear and angular velocity such that it turns away from the wall succesfully.
+
+--To run this node use this command after sourcing:
+
+```
+
+ros2 launch turtle_patrol avoidance_launch.py
+```
+--and to change the parameter(safety_threshold) dynamically:
+
+```
+ros2 param set /collision_avoidance_node safety_threshold 2.5
+```
+### Subtask B:-
+
+--To create
+
 
 
 
