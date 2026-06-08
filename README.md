@@ -154,7 +154,36 @@ ros2 param set /collision_avoidance_node safety_threshold 2.5
 ```
 ### Subtask B:-
 
---To create
+--To create the appropriate files:
+
+```
+cd ~/ros2_ws/src/turtle_patrol/turtle_patrol/
+
+touch circle_patrol_client.py
+
+touch circle_patrol_server.py
+
+```
+
+--Purpose of these two files is to write a custom Action Server and Action Client from scratch to handle precision circular navigation.
+
+--In this case we have preset the radius of circle to be travelled as 3, so that it collides with wall:
+
+<img width="492" height="467" alt="image" src="https://github.com/user-attachments/assets/2d25457d-a339-4243-aecf-d02ed7868d29" />
+
+<img width="788" height="272" alt="image" src="https://github.com/user-attachments/assets/1767be6c-a181-4e1f-aa64-787f0e3fabfa" />
+
+--The action server's tasks: To make the turtle move in a circle, we publish a constant linear velocity (v) and a constant angular velocity (w) to /turtle1/cmd_vel. They are bound by the relation: w = v / radius (Fixed linear velocity at v = 1.5 m/s, and calculating w dynamically based on the requested goal radius). We use the safety_threshold here as well.
+
+--The action client sends goal in the form of radius(3) and prints the incoming feedback(distance_travelled) smoothly. It reads and prints the final result returned by server.
+
+--Code for client: [circle_patrol_server.py](ros2_ws/src/turtle_patrol/turtle_patrol/circle_patrol_server.py)
+
+--Code for server: [circle_patrol_client.py](ros2_ws/src/turtle_patrol/turtle_patrol/circle_patrol_client.py)
+
+**CMakeLists.txt is used in the turtle_patrol package to tell ROS 2 how to install and build the package. Even though circle_patrol_server.py and circle_patrol_client.py are Python scripts, ROS 2 needs them to be installed into the workspace during colcon build so that commands like ros2 run turtle_patrol circle_patrol_server.py can find and execute them. In an ament_cmake package, CMakeLists.txt handles this installation process and registers the scripts as executable ROS 2 nodes.**
+
+
 
 
 
