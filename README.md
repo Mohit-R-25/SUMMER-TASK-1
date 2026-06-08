@@ -109,6 +109,33 @@ Similar to publisher, download example listener node.
 <img width="798" height="211" alt="image" src="https://github.com/user-attachments/assets/e6c279ea-dfc0-4542-a3e2-7c30482a3182" />
 
 
+## turtle_patrol PACKAGE:
+
+### Subtask A:-
+
+--We create a package named turtle_patrol and node named collision_avoidance_node using these commands:
+
+```
+cd ~/ros2_ws/src/
+
+mkdir turtle_patrol
+
+cd ~/ros2_ws/src/turtle_patrol/turtle_patrol
+
+touch collision_avoidance_node.py
+
+```
+
+--In this node we subscribe to /turtle1/pose topic of message type turtlesim/msg/Pose, which continuosly reads thr turtle's x, y and theta.
+
+--In the same node we publish /turtle1/cmd_vel topic of message type geometry_msgs/msg/Twist.
+
+--The purpose is to make the turtle move forward until it crosses a safety_threshold value which can be changed dynamically in the the cli. This safety_threshold value is the distance from any of the walls of a square of 11x11 dimensions, and when it is reached, turtle should turn away and in turn avoid collision with th wall.
+
+--Code for this node: [collision_avoidance_node.py](ros2_ws/src/turtle_patrol/turtle_patrol/collision_avoidance_node.py)
+
+--Logic: 
+
 
 
 
