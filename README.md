@@ -136,6 +136,10 @@ touch collision_avoidance_node.py
 
 --Logic: 
 
+->move forward with some linear velocity and zero angular velocity.
+
+->If x<safety_threshold or x>safety_threshold or y<safety_threshold or y>safety_threshold 
+
 
 
 
