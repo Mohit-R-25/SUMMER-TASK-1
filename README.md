@@ -183,7 +183,25 @@ touch circle_patrol_server.py
 
 **CMakeLists.txt is used in the turtle_patrol package to tell ROS 2 how to install and build the package. Even though circle_patrol_server.py and circle_patrol_client.py are Python scripts, ROS 2 needs them to be installed into the workspace during colcon build so that commands like ros2 run turtle_patrol circle_patrol_server.py can find and execute them. In an ament_cmake package, CMakeLists.txt handles this installation process and registers the scripts as executable ROS 2 nodes.**
 
-##
+## my_robot_description PACKAGE:
+
+-- This contains the urdf for a simple robot with a rectangular chassis and 4 wheels as well as a world file which contains the specifications for physics, ground, gravity and sun in gazebo. To view these files: [simple_robot.urdf.xacro](ros2_ws/src/my_robot_description/urdf/simple_robot.urdf.xacro) , [my_world.sdf](ros2_ws/src/my_robot_description/worlds/my_world.sdf).
+
+--To view the visualisation of this robot in rviz, use this command:
+
+```
+ros2 launch my_robot_description display.launch.py
+
+```
+
+--Here the launch file runs the robot_state_publisher and joint_state_publisher_gui nodes and at the same time starts rviz2. View the launch file here: [display.launch.py](ros2_ws/src/my_robot_description/launch/display.launch.py)
+
+--TF tree showing all the frames:
+
+<img width="1667" height="562" alt="image" src="https://github.com/user-attachments/assets/eef78ff5-482d-472c-bfc9-7f530c575cd9" />
+
+
+
 
 
 
