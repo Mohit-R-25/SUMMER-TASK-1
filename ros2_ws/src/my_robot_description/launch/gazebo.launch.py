@@ -15,7 +15,7 @@ def generate_launch_description():
     urdf_file = os.path.join(
         pkg_path,
         'urdf',
-        'simple_robot.urdf.xacro'
+        'simple_robot.urdf'
     )
 
 
