@@ -194,6 +194,9 @@ ros2 launch my_robot_description display.launch.py
 
 ```
 
+<img width="964" height="951" alt="image" src="https://github.com/user-attachments/assets/fd6dffe0-be6d-41e4-9214-5156ee748d13" />
+
+
 --Here the launch file runs the robot_state_publisher and joint_state_publisher_gui nodes and at the same time starts rviz2. View the launch file here: [display.launch.py](ros2_ws/src/my_robot_description/launch/display.launch.py)
 
 --TF tree showing all the frames:
@@ -205,6 +208,10 @@ ros2 launch my_robot_description display.launch.py
 ```
 ros2 launch my_robot_description gazebo.launch.py
 ```
+
+<img width="1587" height="944" alt="image" src="https://github.com/user-attachments/assets/4b20390c-8537-429f-bd2b-8476159dd5a9" />
+
+
 
 --This launch file spawns the world file [my_world.sdf](ros2_ws/src/my_robot_description/worlds/my_world.sdf) and also spawns the robot [simple_robot.urdf.xacro](ros2_ws/src/my_robot_description/urdf/simple_robot.urdf.xacro) and this launch file can be viewed here: [gazebo.launch.py](ros2_ws/src/my_robot_description/launch/gazebo.launch.py)
 
