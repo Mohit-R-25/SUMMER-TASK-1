@@ -200,6 +200,16 @@ ros2 launch my_robot_description display.launch.py
 
 <img width="1667" height="562" alt="image" src="https://github.com/user-attachments/assets/eef78ff5-482d-472c-bfc9-7f530c575cd9" />
 
+--To view the robot in gazebo simulation we run this command:
+
+```
+ros2 launch my_robot_description gazebo.launch.py
+```
+
+--This launch file spawns the world file [my_world.sdf](ros2_ws/src/my_robot_description/worlds/my_world.sdf) and also spawns the robot [simple_robot.urdf.xacro](ros2_ws/src/my_robot_description/urdf/simple_robot.urdf.xacro) and this launch file can be viewed here: [gazebo.launch.py](ros2_ws/src/my_robot_description/launch/gazebo.launch.py)
+
+
+
 
 
 
