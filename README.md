@@ -215,11 +215,17 @@ ros2 launch my_robot_description gazebo.launch.py
 
 --This launch file spawns the world file [my_world.sdf](ros2_ws/src/my_robot_description/worlds/my_world.sdf) and also spawns the robot [simple_robot.urdf.xacro](ros2_ws/src/my_robot_description/urdf/simple_robot.urdf.xacro) and this launch file can be viewed here: [gazebo.launch.py](ros2_ws/src/my_robot_description/launch/gazebo.launch.py)
 
-##robot PACKAGE:
+## robot PACKAGE:
 
 --This package contains the description, world file and launch file for simulating and visualizing a robot with 2 wheels, a caster wheel, a rotating arm with an camera attached on top of it, a lidar sensor at the base of the arm and an imu sensor.
 
---The main description file contains the robots dimensions and orientation, gazebo plugins and ros2_control block and you can find it here-->[my_robot.urdf.xacro](ros2_ws/src/robot/urdf/my_robot.urdf.xacro)
+--The main description file contains the robots dimensions and orientation, gazebo plugin(for sensors), and ros2_control block and you can find it here-->[mobile_base.xacro](ros2_ws/src/robot/urdf/mobile_base.xacro)
+
+--The world file spawns the robot as well as multiple obstacles for testing lidar sensor--> [my_world.sdf](ros2_ws/src/robot/worlds/my_world.sdf)
+
+--The launch file launches gazebo, spawns the robot in gazebo, starts robot_state_publisher, joint_state_broadcaster, joint_state_publisher, arm_controller(defined here:[robot_controllers](ros2_ws/src/robot/config/robot_controllers.yaml)), rviz, the rqt controller for arm and the bridge node all at once with a small delay between some of them and you can find it here: [full.launch.py](ros2_ws/src/robot/launch/full.launch.py)
+
+--
 
 
 
