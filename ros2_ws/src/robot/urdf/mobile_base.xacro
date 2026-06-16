@@ -138,7 +138,7 @@
     <joint name="arm_joint" type="revolute">
         <parent link="base_link"/>
         <child link="arm_link"/>
-        <origin xyz="0 0 ${base_height}" rpy="0 0 0"/>
+        <origin xyz="0 0 ${base_height + 0.05}" rpy="0 0 0"/>
         <axis xyz="0 1 0"/>
 
         <limit lower="-1.57"
@@ -203,7 +203,7 @@
     <joint name="lidar_joint" type="fixed">
         <parent link="base_link"/>
         <child link="lidar_link"/>
-        <origin xyz="0 0 ${base_height + 0.05}"/>
+        <origin xyz="0 0 ${base_height+0.025}"/>
     </joint>
 
     <link name="imu_link">
@@ -228,6 +228,9 @@
         <child link="imu_link"/>
         <origin xyz="0 0 ${base_height/2.0}"/>
     </joint>
+
+
+
 
 
     <gazebo reference="camera_link">
@@ -287,6 +290,66 @@
             <visualize>true</visualize>
         </sensor>
     </gazebo>
+    
+
+
+    <ros2_control name="RoverControl" type="system">
+        <hardware>
+            <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+        </hardware>
+        <joint name="arm_joint">
+            <command_interface name="position"/>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+    </ros2_control>
+
+    <gazebo>
+        <plugin filename="ignition-gazebo-diff-drive-system" name="ignition::gazebo::systems::DiffDrive">
+            <left_joint>base_left_wheel_joint</left_joint>
+            <right_joint>base_right_wheel_joint</right_joint>
+            <wheel_separation>0.45</wheel_separation>
+            <wheel_radius>0.1</wheel_radius>
+            <odom_publish_frequency>50</odom_publish_frequency>
+            <topic>cmd_vel</topic>
+            
+            <publish_odom>true</publish_odom>
+            <publish_odom_tf>true</publish_odom_tf>
+            <publish_wheel_tf>true</publish_wheel_tf>
+            
+            <left_wheel_frame>left_wheel_link</left_wheel_frame>
+            <right_wheel_frame>right_wheel_link</right_wheel_frame>
+            
+            <frame_id>odom</frame_id>
+            <child_frame_id>base_footprint</child_frame_id> 
+        </plugin>
+    </gazebo>
+
+    <gazebo>
+        <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+        <parameters>$(find robot)/config/robot_controllers.yaml</parameters>
+        </plugin>
+    </gazebo>
+
+    <gazebo reference="caster_wheel_link">
+        <mu1>0.0</mu1>
+        <mu2>0.0</mu2>
+        <kp>1000000.0</kp>
+        <kd>1.0</kd>
+    </gazebo>
+
+    <gazebo reference="left_wheel_link">
+        <mu1>1.5</mu1>
+        <mu2>1.5</mu2>
+    </gazebo>
+
+    <gazebo reference="right_wheel_link">
+        <mu1>1.5</mu1>
+        <mu2>1.5</mu2>
+    </gazebo>
+
+
+
 
 
 </robot>
