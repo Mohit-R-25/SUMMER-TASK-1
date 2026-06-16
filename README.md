@@ -215,6 +215,12 @@ ros2 launch my_robot_description gazebo.launch.py
 
 --This launch file spawns the world file [my_world.sdf](ros2_ws/src/my_robot_description/worlds/my_world.sdf) and also spawns the robot [simple_robot.urdf.xacro](ros2_ws/src/my_robot_description/urdf/simple_robot.urdf.xacro) and this launch file can be viewed here: [gazebo.launch.py](ros2_ws/src/my_robot_description/launch/gazebo.launch.py)
 
+##robot PACKAGE:
+
+--This package contains the description, world file and launch file for simulating and visualizing a robot with 2 wheels, a caster wheel, a rotating arm with an camera attached on top of it, a lidar sensor at the base of the arm and an imu sensor.
+
+--The main description file contains the robots dimensions and orientation, gazebo plugins and ros2_control block and you can find it here-->[my_robot.urdf.xacro](ros2_ws/src/robot/urdf/my_robot.urdf.xacro)
+
 
 
 
