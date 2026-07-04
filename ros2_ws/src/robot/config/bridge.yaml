@@ -1,0 +1,7 @@
+- ros_topic_name: "/tf_static"
+  gz_topic_name: "/tf_static"
+  ros_type_name: "tf2_msgs/msg/TFMessage"
+  gz_type_name: "gz.msgs.Pose_V"
+  direction: GZ_TO_ROS
+  qos:
+    durability: "transient_local"
