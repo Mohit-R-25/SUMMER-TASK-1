@@ -223,10 +223,41 @@ ros2 launch my_robot_description gazebo.launch.py
 
 --The world file spawns the robot as well as multiple obstacles for testing lidar sensor--> [my_world.sdf](ros2_ws/src/robot/worlds/my_world.sdf)
 
---There also exists model file for spawning the required aruco markers(2)--> []
---The launch file launches gazebo, spawns the robot in gazebo, starts robot_state_publisher, joint_state_broadcaster, joint_state_publisher, arm_controller(defined here:[robot_controllers](ros2_ws/src/robot/config/robot_controllers.yaml)), rviz, the rqt controller for arm and the bridge node all at once with a small delay between some of them and you can find it here: [full.launch.py](ros2_ws/src/robot/launch/full.launch.py)
+--There also exists model files for spawning the required aruco markers(2)--> [model.sdf(aruco marker of  id0)](ros2_ws/src/robot/models/aruco_marker/model.sdf) and [model.sdf(aruco marker of id1)](ros2_ws/src/robot/models/aruco_marker_id1/model.sdf)
 
---
+
+--The launch file launches gazebo, spawns the robot in gazebo, starts robot_state_publisher, joint_state_broadcaster, joint_state_publisher, arm_controller(defined here:[robot_controllers](ros2_ws/src/robot/config/robot_controllers.yaml)), rviz, the rqt controller for arm, spawning the aruco markers with their positions and orientation defined, the aruco tracker node which publishesand the bridge node all at once with a small delay between some of them and you can find it here: [full.launch.py](ros2_ws/src/robot/launch/full.launch.py)
+
+### 1)Camera link:
+
+--Has a physical link named and gazebo reference name: camera_link, and of sensor type: camera
+
+--Gazebo publishes data to a native gazebo topic and a tool called ros_gz_bridge listens to that native gazebo topic and translates it into a form which can be read by ros.
+
+--Once this data passes through the bridge it publishes to 2 topics: /camera/image_raw and /camera/info.
+
+--Thus when the launch file is run, these topics are alive and thus we can see the camera footage from the gazebo world in rviz visualisation of the /camera/image_raw topic:
+
+<img width="963" height="627" alt="image" src="https://github.com/user-attachments/assets/927e9dd6-2cad-4097-86a4-9da4fd4f72c2" />
+
+### 2)Lidar link:
+--Has a physical link named and gazebo reference name: lidar_link, and of sensor type: gpu_lidar
+
+--Gazebo calculates all the distances of objects around it for all(360) rays and that data is eventually pushed to ros_gz_bride.
+
+--Once this data passes through the bridge, it publishes to /scan topic(2D planner scanner)
+
+--Thus when the launch file is run, this topic is alive and thus in the gazebo world we can visualise lidar by selecting the option in the top right:
+
+<img width="934" height="702" alt="image" src="https://github.com/user-attachments/assets/9fa52c80-cf63-4f02-9960-5e36af883bc5" />
+
+
+
+
+
+
+
+
 
 
 
