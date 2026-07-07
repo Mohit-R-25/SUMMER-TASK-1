@@ -262,6 +262,16 @@ ros2 launch my_robot_description gazebo.launch.py
 
 <img width="1156" height="681" alt="image" src="https://github.com/user-attachments/assets/007e6009-b365-4772-bf8d-70e1886fc597" />
 
+### 4) Aruco tracking:
+
+--When data arrives from /camera/image_raw topic, the tracker converts image to grayscale and it looks for clean polygon with 4 corners and rejects everything which doesn't match with that description.
+
+--Once a candidate is found, the tracker checks whether it is an actual aruco marker or just a random square.
+
+--It uses perspective transform to "warp" the skewed, tilted square into a perfect, flat, front-facing square grid.
+
+-- It divides the inner grid into cells based on the ArUco dictionary size (e.g., a $4 \times 4$ or $5 \times 5$ grid) and samples each cell to see if it's black (0) or white (1).
+
 
 
 
