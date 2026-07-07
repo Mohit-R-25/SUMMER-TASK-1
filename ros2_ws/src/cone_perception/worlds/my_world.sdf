@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <world name="my_world">
+
+    <plugin
+      filename="ignition-gazebo-physics-system"
+      name="ignition::gazebo::systems::Physics"/>
+
+    <plugin
+      filename="ignition-gazebo-user-commands-system"
+      name="ignition::gazebo::systems::UserCommands"/>
+
+    <plugin
+      filename="ignition-gazebo-scene-broadcaster-system"
+      name="ignition::gazebo::systems::SceneBroadcaster"/>
+
+    <plugin
+      filename="ignition-gazebo-contact-system"
+      name="ignition::gazebo::systems::Contact"/>
+
+    <plugin
+      filename="ignition-gazebo-sensors-system"
+      name="ignition::gazebo::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+
+    <plugin 
+      filename="ignition-gazebo-imu-system" 
+      name="ignition::gazebo::systems::Imu"/>
+
+    <gravity>0 0 -9.8</gravity>
+
+    <light name="sun" type="directional">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 20 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="red_cone">
+      <pose>3.0 0.0 0.0 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>file:///home/mohit/ros2_ws/src/cone_perception/worlds/red_cone.obj</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>1.0 0.0 0.0 1.0</ambient>
+            <diffuse>1.0 0.0 0.0 1.0</diffuse>
+            <specular>0.5 0.5 0.5 1.0</specular>
+            <pbr>
+              <metal>
+                <albedo_map></albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <cylinder><radius>0.1</radius><length>0.4</length></cylinder>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="blue_cone">
+      <pose>2.0 -1.0 0.0 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>file:///home/mohit/ros2_ws/src/cone_perception/worlds/blue_cone.obj</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 1.0 1.0</ambient>
+            <diffuse>0.0 0.0 1.0 1.0</diffuse>
+            <specular>0.5 0.5 0.5 1.0</specular>
+            <pbr>
+              <metal>
+                <albedo_map></albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <cylinder><radius>0.1</radius><length>0.4</length></cylinder>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="yellow_cone">
+      <pose>2.5 -0.5 0.0 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>file:///home/mohit/ros2_ws/src/cone_perception/worlds/yellow_cone.obj</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>1.0 1.0 0.0 1.0</ambient>
+            <diffuse>1.0 1.0 0.0 1.0</diffuse>
+            <specular>0.5 0.5 0.5 1.0</specular>
+            <pbr>
+              <metal>
+                <albedo_map></albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <cylinder><radius>0.1</radius><length>0.4</length></cylinder>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="green_cone">
+      <pose>2.5 0.5 0.0 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>file:///home/mohit/ros2_ws/src/cone_perception/worlds/green_cone.obj</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.0 1.0 0.0 1.0</ambient>  <diffuse>0.0 1.0 0.0 1.0</diffuse>
+            <specular>0.5 0.5 0.5 1.0</specular>
+            <pbr>
+              <metal>
+                <albedo_map></albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <cylinder><radius>0.1</radius><length>0.4</length></cylinder>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+  </world>
+</sdf>

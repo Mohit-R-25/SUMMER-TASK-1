@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 4
+names: ['blue', 'green', 'red', 'yellow']
+
+roboflow:
+  workspace: mohit-r-o7frf
+  project: cone_colour
+  version: dataset
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/mohit-r-o7frf/cone_colour/dataset/dataset
