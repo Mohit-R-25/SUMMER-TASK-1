@@ -270,7 +270,17 @@ ros2 launch my_robot_description gazebo.launch.py
 
 --It uses perspective transform to "warp" the skewed, tilted square into a perfect, flat, front-facing square grid.
 
--- It divides the inner grid into cells based on the ArUco dictionary size (e.g., a $4 \times 4$ or $5 \times 5$ grid) and samples each cell to see if it's black (0) or white (1).
+-- It divides the inner grid into cells based on the ArUco dictionary size (e.g., a 4x4 or 5x5 grid) and samples each cell to see if it's black(0) or white(1).
+
+--It checks this binary bitstream against its internal dictionary.
+
+--If the bits match a known pattern, the marker is successfully detected, its unique ID is read, and the tracker pinpoints its four exact corner coordinates in pixel space.
+
+--Further, the tracker estimates the position of the aruco marker with respect to base_footprint and we can see it's coordinate frame is seen on rviz as follows:
+
+<img width="775" height="605" alt="image" src="https://github.com/user-attachments/assets/1adc2050-6fbb-48cf-a26e-e5630865c20a" />
+
+
 
 
 
