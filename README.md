@@ -282,3 +282,15 @@ ros2 launch my_robot_description gazebo.launch.py
 
 <img width="775" height="605" alt="image" src="https://github.com/user-attachments/assets/1adc2050-6fbb-48cf-a26e-e5630865c20a" />
 
+--In the terminal we can see the position being continually published:
+
+<img width="700" height="406" alt="image" src="https://github.com/user-attachments/assets/1ecb3347-3918-487b-8606-4151961e38b9" />
+
+
+--Here is the code for the aruco tracker node: [aruco_tracker.py](ros2_ws/src/robot/robot/aruco_tracker.py)
+
+--These are the markers which we are use to track position: [marker_0.png](ros2_ws/src/robot/models/aruco_marker/materials/textures/marker_0.png) and [marker_1.png](ros2_ws/src/robot/models/aruco_marker_id1/materials/textures/marker_1.png)
+
+
+
+
