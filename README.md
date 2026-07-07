@@ -262,7 +262,7 @@ ros2 launch my_robot_description gazebo.launch.py
 
 <img width="1156" height="681" alt="image" src="https://github.com/user-attachments/assets/007e6009-b365-4772-bf8d-70e1886fc597" />
 
-### 4) Aruco tracking:
+### 4) Aruco marker tracking:
 
 --When data arrives from /camera/image_raw topic, the tracker converts image to grayscale and it looks for clean polygon with 4 corners and rejects everything which doesn't match with that description.
 
@@ -276,39 +276,9 @@ ros2 launch my_robot_description gazebo.launch.py
 
 --If the bits match a known pattern, the marker is successfully detected, its unique ID is read, and the tracker pinpoints its four exact corner coordinates in pixel space.
 
+--TF tree: base_link ──► arm_link ──► camera_link_optical ──► aruco_marker_42
+
 --Further, the tracker estimates the position of the aruco marker with respect to base_footprint and we can see it's coordinate frame is seen on rviz as follows:
 
 <img width="775" height="605" alt="image" src="https://github.com/user-attachments/assets/1adc2050-6fbb-48cf-a26e-e5630865c20a" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
