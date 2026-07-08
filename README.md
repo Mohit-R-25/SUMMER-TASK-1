@@ -291,6 +291,46 @@ ros2 launch my_robot_description gazebo.launch.py
 
 --These are the markers which we are use to track position: [marker_0.png](ros2_ws/src/robot/models/aruco_marker/materials/textures/marker_0.png) and [marker_1.png](ros2_ws/src/robot/models/aruco_marker_id1/materials/textures/marker_1.png)
 
+## Cone colour perception:
+
+--This package contains the same urdf and launch file except for the arm. Thus, the camera is attached directly above the lidar sensor. Here is the updated urdf: [mobile_base.xacro](ros2_ws/src/cone_perception/urdf/mobile_base.xacro)
+
+--We started by writing a python node for taking pictures of what is being seen through camera of the gazebo world which contains cones of 4 different colours. Here is the code for this node: [camera_snapshot.py](ros2_ws/src/cone_perception/cone_perception/camera_snapshot.py)
+
+--Using the teleoperation, we move around in the gazebo world and and take multiple pictures which we will use for training the colour perception yolo model. Here is an example of one of the images used for training:
+
+<img width="320" height="240" alt="image" src="https://github.com/user-attachments/assets/11d9b760-448e-4f6a-8335-6525acd45252" />
+
+--Using roboflow for labeling all the images(49) with bounded boxes on all the objects naming them as yellow, red, blue or green cones appropriately, we can create a set of training, testing and validation data.
+
+--We export this folder onto our system(google drive) and use it to train the model using yolo architecture(You Only Look once)
+
+--In google collab the main command was: 
+
+```
+pip install ultralytics
+
+```
+
+--And to run a test prediction on a random image from testing data use this command:
+
+```
+cd ~/ros2_ws/src/cone_perception/
+yolo predict model=best_augmented.pt source=cone_dataset/test/images/cone_frame_18_png.rf.ZyJGADUF6iRbUrh2Ge8L.jpg conf=0.25
+```
+
+--For which the results is found in: [prediction-5](ros2_ws/src/cone_perception/runs/detect/predict-5/cone_frame_18_png.rf.ZyJGADUF6iRbUrh2Ge8L.jpg)
+
+--Here is the code used for detecting colour of cones:[cone_detector.py](ros2_ws/src/cone_perception/cone_perception/cone_detector.py)
+
+--Here is the result shown in the gazebo world:
+
+<img width="1328" height="511" alt="image" src="https://github.com/user-attachments/assets/2ea36029-ddcc-44aa-8794-3119d4d4d755" />
+
+
+
+
+
 
 
 
